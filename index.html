@@ -255,31 +255,24 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Interactive robot learning is a challenging problem as the robot is present with human users who expect the robot to
+            learn novel skills to solve novel tasks perpetually with sample efficiency. In this work we present a framework for robots
+            to continually learn tasks and visuo-motor skills and query for
+            novel skills via dialog interactions with human users. 
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            Our robot agent maintains a skill library, and uses an existing LLM to perform grounded dialog interactions to query unknown skills
+            from real human users. We developed a novel visual-motor control policy Action Chunking Transformer with Low Rank Adaptation (ACT-LoRA) 
+            that can continually learn novel skills using only a few demonstrations which is critical in human-robot interaction scenarios. 
+            The paper has twin goals: Firstly to demonstrate better continual learning in simulation; and secondly, to demonstrate the use of our 
+            dialog based learning framework in a realistic human-robot interaction use case.
           </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+          <p>  
+            Our ACT-LoRA policy consistently outperforms a GMM-LoRA baseline on multiple continual learning simulation benchmarks by achieving 
+            >300% improvements on novel skills, while achieving comparable performance in existing skills. Moreover, with our IRB approved 
+            human-subjects study we demonstrate that our dialog based continual learning framework allows users to teach 
+            robots cooking skills successfully (100%) while spending a higher ratio of time on finishing an auxiliary
+            distraction tasks in the test phase of the study compared to a non-learning language based agent (p < 0.001).
           </p>
         </div>
       </div>
@@ -287,7 +280,8 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+     <!-- Commented out for now, add the RSS/CoRL video later after we upload it to youtub e -->
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -295,7 +289,7 @@
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
   </div>
 </section>
